@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>429</width>
-    <height>393</height>
+    <width>567</width>
+    <height>475</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,73 +17,160 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>401</width>
-      <height>311</height>
+      <x>9</x>
+      <y>9</y>
+      <width>551</width>
+      <height>401</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_15">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_16">
        <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Enter Item</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="input"/>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <layout class="QVBoxLayout" name="verticalLayout_28">
          <item>
-          <widget class="QPushButton" name="insertBtn">
+          <layout class="QHBoxLayout" name="horizontalLayout_17">
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>Enter Item</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="input1"/>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_29">
+             <item>
+              <widget class="QPushButton" name="insertBtn1">
+               <property name="text">
+                <string>Insert Item</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="memberBtn1">
+               <property name="text">
+                <string>Is Member</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="removeBtn1">
+               <property name="text">
+                <string>Remove Item</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="mgbox1">
            <property name="text">
-            <string>Insert Item</string>
+            <string>TextLabel</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="memberBtn">
+          <widget class="QListWidget" name="setViewer1"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_30">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_18">
+           <item>
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>Enter Item</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="input2"/>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_31">
+             <item>
+              <widget class="QPushButton" name="insertBtn2">
+               <property name="text">
+                <string>Insert Item</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="memberBtn2">
+               <property name="text">
+                <string>Is Member</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="removeBtn2">
+               <property name="text">
+                <string>Remove Item</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="mgbox2">
            <property name="text">
-            <string>Is Member</string>
+            <string>TextLabel</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="removeBtn">
-           <property name="text">
-            <string>Remove Item</string>
-           </property>
-          </widget>
+          <widget class="QListWidget" name="setViewer2"/>
          </item>
         </layout>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="QLabel" name="mgbox">
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_15">
+       <item>
+        <widget class="QPushButton" name="intersectionBtn">
+         <property name="text">
+          <string>Intersection</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="unioBtn">
+         <property name="text">
+          <string>Union</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="equalBtn">
+         <property name="text">
+          <string>IsEqual</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QListWidget" name="setViewer"/>
+      <widget class="QListWidget" name="resultViewer"/>
      </item>
     </layout>
    </widget>
-   <zorder>verticalLayoutWidget</zorder>
-   <zorder>label_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>429</width>
+     <width>567</width>
      <height>25</height>
     </rect>
    </property>

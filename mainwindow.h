@@ -20,21 +20,43 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-    hashset_t set;
-    QHash<char *, unsigned int> hash;
-    QList<QString> visual_set;
-    unsigned int counter;
+    hashset_t set1;
+    QHash<char *, unsigned int> hash1;
+    QList<QString> visual_set1;
+    QList<QString> address_tracker1;
+    unsigned int counter1;
+
+    hashset_t set2;
+    QHash<char *, unsigned int> hash2;
+    QList<QString> visual_set2;
+    QList<QString> address_tracker2;
+    unsigned int counter2;
     ~MainWindow();
 
 private slots:
-    void on_insertBtn_clicked();
+    void on_insertBtn1_clicked();
 
-    void on_memberBtn_clicked();
+    void on_memberBtn1_clicked();
 
-    void on_removeBtn_clicked();
+    void on_removeBtn1_clicked();
 
-    int checkInputHash(int key, char * input);
-    void visualize();
+    int checkInputHash1(int key, char * input);
+    void visualize1();
+
+    void on_insertBtn2_clicked();
+
+    void on_memberBtn2_clicked();
+
+    void on_removeBtn2_clicked();
+
+    int checkInputHash2(int key, char * input);
+    void visualize2();
+
+    void on_equalBtn_clicked();
+
+    void on_intersectionBtn_clicked();
+
+    void on_unioBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
