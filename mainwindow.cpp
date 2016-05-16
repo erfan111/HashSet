@@ -4,6 +4,7 @@
 #include <QListWidgetItem>
 #include <QDebug>
 #include <string>
+#include <QString>
 #include <stdlib.h>
 
 
@@ -100,6 +101,7 @@ void MainWindow::on_memberBtn1_clicked()
 void MainWindow::on_removeBtn1_clicked()
 {
     QString  foo =  ui->input1->text();
+    int result = 0;
     if (foo.length())
     {
         char * input1 = new char[foo.length()];
@@ -111,7 +113,7 @@ void MainWindow::on_removeBtn1_clicked()
             input1[i] = mystring[i];
         }
         int inputHash = atoi(input1);
-        int result = 0;
+
         if(inputHash)
         {
 
@@ -138,12 +140,57 @@ void MainWindow::on_removeBtn1_clicked()
                 }
             }
         }
-        if(result)
-            ui->mgbox1->setText("Successfully removed");
-        else
-            ui->mgbox1->setText("Value Not in set");
 
     }
+
+    else
+    {
+        if(item_for_remove.length())
+        {
+            for(int j=0; j<visual_set1.length(); j++)
+            {
+                if(item_for_remove == visual_set1[j])
+                {
+                    QByteArray temp = item_for_remove.toLatin1();
+                    const char * remove = temp.data();
+                    visual_set1.removeOne(visual_set1[j]);
+                    int selected = atoi(remove);
+                    if(selected)
+                    {
+
+                        result = hashset_remove(set1,(void*) selected);
+                        qDebug() << "removing number: "  <<visual_set1.removeOne(remove) <<visual_set1 ;
+                    }
+
+                    else
+                    {
+                        QHashIterator<char *, unsigned int> x(hash1);
+                        while (x.hasNext()) {
+                            x.next();
+                            if(strcmp (remove, x.key()) == 0)
+                            {
+                                result = hashset_remove(set1,(void*) x.value());
+                                qDebug() << hash1.remove(x.key()) << " removing from hash: " << x.key() << " ";
+                                QHashIterator<char *, unsigned int> y(hash1);
+                                while (y.hasNext()) {
+                                    y.next();
+                                    qDebug() << x.key() << " " ;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    if(result)
+        ui->mgbox1->setText("Successfully removed");
+    else
+        ui->mgbox1->setText("Value Not in set");
+
     ui->input1->clear();
     visualize1();
 
@@ -162,7 +209,7 @@ int MainWindow::checkInputHash1(int key, char * input)
 
     }
     else
-    {    
+    {
         QHashIterator<char *, unsigned int> i(hash1);
         int flag = 0;
         while (i.hasNext()) {
@@ -293,6 +340,7 @@ void MainWindow::on_memberBtn2_clicked()
 void MainWindow::on_removeBtn2_clicked()
 {
     QString  foo =  ui->input2->text();
+    int result = 0;
     if (foo.length())
     {
         char * input2 = new char[foo.length()];
@@ -304,7 +352,7 @@ void MainWindow::on_removeBtn2_clicked()
             input2[i] = mystring[i];
         }
         int inputHash = atoi(input2);
-        int result = 0;
+
         if(inputHash)
         {
 
@@ -331,12 +379,56 @@ void MainWindow::on_removeBtn2_clicked()
                 }
             }
         }
-        if(result)
-            ui->mgbox2->setText("Successfully removed");
-        else
-            ui->mgbox2->setText("Value Not in set");
 
     }
+    else
+    {
+        if(item_for_remove.length())
+        {
+            for(int j=0; j<visual_set2.length(); j++)
+            {
+                if(item_for_remove == visual_set2[j])
+                {
+                    QByteArray temp = item_for_remove.toLatin1();
+                    const char * remove = temp.data();
+                    visual_set2.removeOne(visual_set2[j]);
+                    int selected = atoi(remove);
+                    if(selected)
+                    {
+
+                        result = hashset_remove(set2,(void*) selected);
+                        qDebug() << "removing number: "  <<visual_set2.removeOne(remove) <<visual_set2 ;
+                    }
+
+                    else
+                    {
+                        QHashIterator<char *, unsigned int> x(hash2);
+                        while (x.hasNext()) {
+                            x.next();
+                            if(strcmp (remove, x.key()) == 0)
+                            {
+                                result = hashset_remove(set2,(void*) x.value());
+                                qDebug() << hash2.remove(x.key()) << " removing from hash: " << x.key() << " ";
+                                QHashIterator<char *, unsigned int> y(hash2);
+                                while (y.hasNext()) {
+                                    y.next();
+                                    qDebug() << x.key() << " " ;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    if(result)
+        ui->mgbox2->setText("Successfully removed");
+    else
+        ui->mgbox2->setText("Value Not in set");
+
     ui->input2->clear();
     visualize2();
 
@@ -486,3 +578,42 @@ void MainWindow::on_unioBtn_clicked()
 
 
 }
+
+
+void MainWindow::on_setViewer1_clicked(const QModelIndex &index)
+{
+    item_for_remove.clear();
+    ui->mgbox1->setText("Press 'Remove Item' button to remove this item");
+
+    for(int i=0; i<index.data().toString().length(); i++)
+    {
+        if (index.data().toString()[i] != '\t')
+            item_for_remove += index.data().toString()[i];
+        else
+            break;
+    }
+}
+
+
+
+void MainWindow::on_setViewer2_clicked(const QModelIndex &index)
+{
+    item_for_remove.clear();
+    ui->mgbox2->setText("Press 'Remove Item' button to remove this item");
+
+    for(int i=0; i<index.data().toString().length(); i++)
+    {
+        if (index.data().toString()[i] != '\t')
+            item_for_remove += index.data().toString()[i];
+        else
+            break;
+    }
+
+}
+
+
+
+
+
+
+

@@ -1,3 +1,4 @@
+
 /*
  * hashset_itr.c
  *
@@ -86,4 +87,3 @@ size_t hashset_iterator_value(hashset_itr_t itr) {
 
   return itr->set->items[itr->index];
 }
-

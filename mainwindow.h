@@ -31,6 +31,7 @@ public:
     QList<QString> visual_set2;
     QList<QString> address_tracker2;
     unsigned int counter2;
+    QString item_for_remove;
     ~MainWindow();
 
 private slots:
@@ -57,6 +58,10 @@ private slots:
     void on_intersectionBtn_clicked();
 
     void on_unioBtn_clicked();
+
+    void on_setViewer2_clicked(const QModelIndex &index);
+
+    void on_setViewer1_clicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;
