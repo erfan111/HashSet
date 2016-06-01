@@ -1,5 +1,7 @@
-#include "hashset.h"
+
+
 #include <assert.h>
+#include <hashset.h>
 
 static const unsigned int prime_1 = 73;
 static const unsigned int prime_2 = 5009;
