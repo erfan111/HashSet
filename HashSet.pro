@@ -14,11 +14,9 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    hashset.c \
-    hashset_itr.c
+    hashset.c
 
 HEADERS  += mainwindow.h \
-    hashset.h \
-    hashset_itr.h
+    hashset.h
 
 FORMS    += mainwindow.ui

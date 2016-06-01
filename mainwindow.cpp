@@ -391,7 +391,7 @@ int MainWindow::checkInputHash2(int key, char * input)
         ui->mgbox2->setText("Successfully inserted");
         break;
     default:
-        ui->mgbox2->setText("fucked");
+        ui->mgbox2->setText("");
     }
     return(a);
 }
